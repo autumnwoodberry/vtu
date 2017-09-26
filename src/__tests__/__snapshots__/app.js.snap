@@ -39,7 +39,7 @@ exports[`!a && b 1`] = `
     <div>
         <pre>{
   "a": false,
-  "b": false
+  "b": true
 }</pre>
         <p>The "a" boolean toggles the wrapper div on/off with a "fade" transition.</p>
         <p>The "b" boolean controls which child div is shown with a "slide" transition.</p>
@@ -72,7 +72,7 @@ exports[`a && !b 1`] = `
 <div id="app">
     <div>
         <pre>{
-  "a": false,
+  "a": true,
   "b": false
 }</pre>
         <p>The "a" boolean toggles the wrapper div on/off with a "fade" transition.</p>
@@ -81,7 +81,12 @@ exports[`a && !b 1`] = `
         <div><input type="checkbox"> <label>a</label></div>
         <div><input type="checkbox"> <label>b</label></div>
     </div>
-    <!---->
+    <div style="position: relative; width: 100px; height: 100px; overflow: hidden; border: 1px solid black;" class="fade-enter fade-enter-active">
+        <div style="position: absolute; width: 100px; height: 100px;">
+            <pre>a &amp;&amp; !b</pre>
+        </div>
+        <!---->
+    </div>
 </div>
 `;
 

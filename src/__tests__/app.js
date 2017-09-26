@@ -11,6 +11,9 @@ beforeEach(() => {
 // without nexttick (all snapshots are identical)
 
 test('!a && !b', () => {
+    wrapper.vm.a = false
+    wrapper.vm.b = false
+
     expect(wrapper.vm.a).toBe(false)
     expect(wrapper.vm.b).toBe(false)
     expect(wrapper.html()).toMatchSnapshot()
@@ -18,6 +21,7 @@ test('!a && !b', () => {
 
 test('a && !b', () => {
     wrapper.vm.a = true
+    wrapper.vm.b = false
 
     expect(wrapper.vm.a).toBe(true)
     expect(wrapper.vm.b).toBe(false)
@@ -25,10 +29,10 @@ test('a && !b', () => {
 })
 
 test('!a && b', () => {
-    wrapper.vm.a = true
+    wrapper.vm.a = false
     wrapper.vm.b = true
 
-    expect(wrapper.vm.a).toBe(true)
+    expect(wrapper.vm.a).toBe(false)
     expect(wrapper.vm.b).toBe(true)
     expect(wrapper.html()).toMatchSnapshot()
 })
@@ -36,6 +40,9 @@ test('!a && b', () => {
 // with nexttick (snapshots show correct html as expected)
 
 test('!a && !b using Vue.nextTick', () => {
+    wrapper.vm.a = false
+    wrapper.vm.b = false
+
     expect(wrapper.vm.a).toBe(false)
     expect(wrapper.vm.b).toBe(false)
     Vue.nextTick(() => {
@@ -45,6 +52,7 @@ test('!a && !b using Vue.nextTick', () => {
 
 test('a && !b using Vue.nextTick', () => {
     wrapper.vm.a = true
+    wrapper.vm.b = false
 
     expect(wrapper.vm.a).toBe(true)
     expect(wrapper.vm.b).toBe(false)
@@ -54,10 +62,10 @@ test('a && !b using Vue.nextTick', () => {
 })
 
 test('!a && b using Vue.nextTick', () => {
-    wrapper.vm.a = true
+    wrapper.vm.a = false
     wrapper.vm.b = true
 
-    expect(wrapper.vm.a).toBe(true)
+    expect(wrapper.vm.a).toBe(false)
     expect(wrapper.vm.b).toBe(true)
     Vue.nextTick(() => {
         expect(wrapper.html()).toMatchSnapshot()

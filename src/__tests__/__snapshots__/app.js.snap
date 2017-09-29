@@ -1,39 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`!a && !b 1`] = `
-<div id="app">
-    <div>
-        <pre>{
-  "a": false,
-  "b": false
-}</pre>
-        <p>The "a" boolean toggles the wrapper div on/off with a "fade" transition.</p>
-        <p>The "b" boolean controls which child div is shown with a "slide" transition.</p>
-        <p></p>
-        <div><input type="checkbox"> <label>a</label></div>
-        <div><input type="checkbox"> <label>b</label></div>
-    </div>
-    <!---->
-</div>
-`;
-
-exports[`!a && !b using Vue.nextTick 1`] = `
-<div id="app">
-    <div>
-        <pre>{
-  "a": false,
-  "b": false
-}</pre>
-        <p>The "a" boolean toggles the wrapper div on/off with a "fade" transition.</p>
-        <p>The "b" boolean controls which child div is shown with a "slide" transition.</p>
-        <p></p>
-        <div><input type="checkbox"> <label>a</label></div>
-        <div><input type="checkbox"> <label>b</label></div>
-    </div>
-    <!---->
-</div>
-`;
-
 exports[`!a && b 1`] = `
 <div id="app">
     <div>
@@ -52,6 +18,23 @@ exports[`!a && b 1`] = `
 `;
 
 exports[`!a && b using Vue.nextTick 1`] = `
+<div id="app">
+    <div>
+        <pre>{
+  "a": false,
+  "b": true
+}</pre>
+        <p>The "a" boolean toggles the wrapper div on/off with a "fade" transition.</p>
+        <p>The "b" boolean controls which child div is shown with a "slide" transition.</p>
+        <p></p>
+        <div><input type="checkbox"> <label>a</label></div>
+        <div><input type="checkbox"> <label>b</label></div>
+    </div>
+    <!---->
+</div>
+`;
+
+exports[`!a && b using wrapper.setData 1`] = `
 <div id="app">
     <div>
         <pre>{
@@ -108,6 +91,94 @@ exports[`a && !b using Vue.nextTick 1`] = `
             <pre>a &amp;&amp; !b</pre>
         </div>
         <!---->
+    </div>
+</div>
+`;
+
+exports[`a && !b using wrapper.setData 1`] = `
+<div id="app">
+    <div>
+        <pre>{
+  "a": true,
+  "b": false
+}</pre>
+        <p>The "a" boolean toggles the wrapper div on/off with a "fade" transition.</p>
+        <p>The "b" boolean controls which child div is shown with a "slide" transition.</p>
+        <p></p>
+        <div><input type="checkbox"> <label>a</label></div>
+        <div><input type="checkbox"> <label>b</label></div>
+    </div>
+    <div style="position: relative; width: 100px; height: 100px; overflow: hidden; border: 1px solid black;" class="fade-enter fade-enter-active">
+        <div style="position: absolute; width: 100px; height: 100px;">
+            <pre>a &amp;&amp; !b</pre>
+        </div>
+        <!---->
+    </div>
+</div>
+`;
+
+exports[`a && b 1`] = `
+<div id="app">
+    <div>
+        <pre>{
+  "a": true,
+  "b": true
+}</pre>
+        <p>The "a" boolean toggles the wrapper div on/off with a "fade" transition.</p>
+        <p>The "b" boolean controls which child div is shown with a "slide" transition.</p>
+        <p></p>
+        <div><input type="checkbox"> <label>a</label></div>
+        <div><input type="checkbox"> <label>b</label></div>
+    </div>
+    <div style="position: relative; width: 100px; height: 100px; overflow: hidden; border: 1px solid black;" class="fade-enter fade-enter-active">
+        <!---->
+        <div style="position: absolute; width: 100px; height: 100px;">
+            <pre>a &amp;&amp; b</pre>
+        </div>
+    </div>
+</div>
+`;
+
+exports[`a && b using Vue.nextTick 1`] = `
+<div id="app">
+    <div>
+        <pre>{
+  "a": true,
+  "b": true
+}</pre>
+        <p>The "a" boolean toggles the wrapper div on/off with a "fade" transition.</p>
+        <p>The "b" boolean controls which child div is shown with a "slide" transition.</p>
+        <p></p>
+        <div><input type="checkbox"> <label>a</label></div>
+        <div><input type="checkbox"> <label>b</label></div>
+    </div>
+    <div style="position: relative; width: 100px; height: 100px; overflow: hidden; border: 1px solid black;" class="fade-enter fade-enter-active">
+        <!---->
+        <div style="position: absolute; width: 100px; height: 100px;">
+            <pre>a &amp;&amp; b</pre>
+        </div>
+    </div>
+</div>
+`;
+
+exports[`a && b using wrapper.setData 1`] = `
+<div id="app">
+    <div>
+        <pre>{
+  "a": true,
+  "b": true
+}</pre>
+        <p>The "a" boolean toggles the wrapper div on/off with a "fade" transition.</p>
+        <p>The "b" boolean controls which child div is shown with a "slide" transition.</p>
+        <p></p>
+        <div><input type="checkbox"> <label>a</label></div>
+        <div><input type="checkbox"> <label>b</label></div>
+    </div>
+    <div style="position: relative; width: 100px; height: 100px; overflow: hidden; border: 1px solid black;" class="fade-enter fade-enter-active">
+        <!---->
+        <div style="position: absolute; width: 100px; height: 100px;">
+            <pre>a &amp;&amp; b</pre>
+        </div>
     </div>
 </div>
 `;
